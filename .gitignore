@@ -1,0 +1,32 @@
+# Raw experimental data
+*.avi
+*.mp4
+*.bag
+*.slp
+
+# Large project directories
+incoming/
+outputs/
+results/
+videos/
+models/
+logs/
+environments/
+
+# Animal-specific identity mappings
+*rfid_tag_mapping*.csv
+
+# Python/Jupyter cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Temporary / backup files
+*.backup
+*backup*
+*before*
+untitled.txt
+
+# OS/editor files
+.DS_Store
+Thumbs.db

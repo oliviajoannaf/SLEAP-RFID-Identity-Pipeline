@@ -1,0 +1,6 @@
+reader,x_cm_from_left,y_cm_from_top,width_x_cm,length_y_cm,position,physical_x_cm_from_left,physical_y_cm_from_top,coordinate_system
+R1,25.5,25.5,4.0,8.0,centre,25.5,25.5,basler_image_180_from_physical
+R2,13.0,36.25,4.0,8.0,top_right,38.0,14.75,basler_image_180_from_physical
+R3,13.0,14.75,4.0,8.0,bottom_right,38.0,36.25,basler_image_180_from_physical
+R4,38.0,14.75,4.0,8.0,bottom_left,13.0,36.25,basler_image_180_from_physical
+R5,38.0,36.25,4.0,8.0,top_left,13.0,14.75,basler_image_180_from_physical
