@@ -30,3 +30,5 @@ untitled.txt
 # OS/editor files
 .DS_Store
 Thumbs.db
+
+!configs/rfid_tag_mapping_example.csv
