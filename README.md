@@ -21,6 +21,7 @@ This workflow incorporates radio-frequency identification (RFID) downstream of S
 9. RFID-assisted biological identity propagation
 10. Identity threshold validation and quality control
 11. Identity-resolved behavioural analysis
+12. Generation of thesis summary tables and figures
 
 ## SLEAP configuration
 
@@ -78,3 +79,16 @@ Several scripts retain project-specific recording identifiers, relative output l
 
 The repository does not contain the original animal-specific RFID transponder mapping. An example mapping schema is provided at `configs/rfid_tag_mapping_example.csv`.
 
+
+## Running the identity pipeline
+
+The repository includes `scripts/run_identity_pipeline.sh` to execute the principal identity-reconstruction stages for an experimental recording after SLEAP inference and RFID preprocessing.
+
+The runner assumes:
+- a SLEAP prediction file has already been generated;
+- RFID timestamps have been converted and transponder identifiers mapped to biological mouse IDs;
+- project-specific recording names and input paths have been configured locally.
+
+Threshold sensitivity analyses can subsequently be executed using `scripts/run_identity_threshold_sweep.sh`.
+
+Detailed stage-by-stage inputs, outputs and script functions are described in `documentation/workflow.md`.

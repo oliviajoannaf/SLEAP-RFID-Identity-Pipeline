@@ -32,8 +32,8 @@ python scripts/11_assign_rfid_anchors.py \
 --video-id ${RECORDING} \
 --sleap ${TABLE_DIR}/${RECORDING}_timestamped.csv \
 --rfid ${RFID_DIR}/${RECORDING}_video_rfid.csv \
---reader-cm config/rfid_reader_positions_cm_basler_180.csv \
---calibration config/arena_calibration_407405spareat1313.csv \
+--reader-cm configs/rfid_reader_positions_cm_basler_180.csv \
+--calibration configs/arena_calibration_407405spareat1313.csv \
 --output-dir ${IDENTITY_DIR}
 
 python scripts/11_filter_rfid_anchors.py \
