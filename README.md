@@ -77,3 +77,4 @@ This workflow was developed as part of an MSc MorphoPHEN thesis within the AI Op
 Several scripts retain project-specific recording identifiers, relative output locations and Humboldt HPC paths used for the analyses reported in the accompanying thesis. These values document the executed research workflow and should be replaced with local dataset paths when adapting the pipeline to new recordings.
 
 The repository does not contain the original animal-specific RFID transponder mapping. An example mapping schema is provided at `configs/rfid_tag_mapping_example.csv`.
+
