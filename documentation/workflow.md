@@ -164,3 +164,13 @@ RFID is used as a downstream biological identity layer rather than as a replacem
 SLEAP supplies dense spatial and anatomical pose information, while RFID supplies sparse observations of biological identity independently of visual appearance.
 
 Uncertain trajectory fragments are retained as unresolved rather than receiving forced identity assignments.
+
+---
+
+## Stage 12 — Thesis table and figure generation
+
+Script:
+- `19_make_thesis_tables_figures.py`
+
+Purpose:
+Generate final summary tables and figures used to report the SLEAP–RFID identity-reconstruction and behavioural-analysis outputs in the thesis.
