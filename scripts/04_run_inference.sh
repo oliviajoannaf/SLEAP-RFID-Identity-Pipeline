@@ -5,29 +5,39 @@ set -euo pipefail
 # Humboldt University Berlin
 # Master's Thesis
 #
-# Stage: Run SLEAP inference on unseen validation footage
+# Stage: Run final SLEAP V2 inference on experimental recordings
 # Script: 04_run_inference.sh
 # Author: Olivia Francis
 # ============================================================
 
-PROJECT_DIR="/lustre/biologie/franciso/Humboldt_Thesis"
+# Usage:
+# bash scripts/04_run_inference.sh VIDEO_PATH OUTPUT_PATH MAX_INSTANCES
+#
+# Example:
+# bash scripts/04_run_inference.sh \
+#   videos/TESTsleapvideos/4074408TE1at1040test_1.avi \
+#   outputs/experimental_v2/4074408TE1at1040test_v2.predictions.slp \
+#   2
 
-cd "$PROJECT_DIR"
-source environments/sleap_env/bin/activate
+VIDEO_PATH="$1"
+OUTPUT_PATH="$2"
+MAX_INSTANCES="$3"
 
-mkdir -p outputs/validation_v1
+CENTROID_MODEL="models/topdown_v2/centroid/topdown_v2_centroid"
+CENTERED_INSTANCE_MODEL="models/topdown_v2/centered_instance/topdown_v2_centered_instance"
+
+mkdir -p "$(dirname "$OUTPUT_PATH")"
 
 env -u SLURM_NTASKS \
-SLURM_JOB_NAME=interactive \
 sleap-nn track \
-  --data_path incoming/405406validation15julyat1232_1.avi \
-  --model_paths models/topdown_v1/centroid/topdown_v1_centroid \
-  --model_paths models/topdown_v1/centered_instance/topdown_v1_centered_instance \
-  --output_path outputs/validation_v1/405406validation_first30s.predictions.slp \
+  --data_path "$VIDEO_PATH" \
+  --model_paths "$CENTROID_MODEL" \
+  --model_paths "$CENTERED_INSTANCE_MODEL" \
+  --output_path "$OUTPUT_PATH" \
   --device cuda \
   --batch_size 8 \
-  --frames 0-899 \
-  --max_instances 2 \
+  --max_instances "$MAX_INSTANCES" \
   --tracking
 
-echo "Validation inference completed successfully."
+echo "Final V2 inference completed successfully."
+echo "Predictions saved to: $OUTPUT_PATH"
