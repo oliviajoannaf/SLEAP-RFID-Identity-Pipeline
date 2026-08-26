@@ -1,6 +1,9 @@
 # Raw experimental data
 *.avi
 *.mp4
+# Allow representative SLEAP demonstration videos
+!media/sleap_two_mouse_overlap_example.mp4
+!media/sleap_three_mouse_overlap_example.mp4
 *.bag
 *.slp
 
